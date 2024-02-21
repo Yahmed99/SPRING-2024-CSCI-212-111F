@@ -15,19 +15,28 @@ public class Lab6 {
          * Step 1 - Instantiated an object bound to 'inputfile' that will read in the
          * contents of whatever 'args[0]' resolves
          */
+
+        // Determine the number of lines in the text file
+        TextFileInput inputFileCount = new TextFileInput(args[0]);
+        int count = 0;
+        while (inputFileCount.readLine() != null) {
+            count++;
+        }
+
+        //Reset the text file to go back to the start
         TextFileInput inputFile = new TextFileInput(args[0]);
 
         // Step 2 - Read in lines and store words in wordArray
-        String[] wordArray = new String[14];
-        int[] numArray = new int[14];
+        String[] wordArray = new String[count];
+        int[] numArray = new int[count];
 
-        for (int i = 0; i < 14; i++) {
+        for (int i = 0; i < count; i++) {
             wordArray[i] = inputFile.readLine();
             // convert the current index to an int to use with the sum() and average() functions
             numArray[i] = Integer.parseInt(wordArray[i]);
         }
 
-        average(numArray, 14);
+        average(numArray, count);
     }// main
 
     /*

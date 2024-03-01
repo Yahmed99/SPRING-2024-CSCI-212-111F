@@ -13,7 +13,7 @@ public class backProject1 {
         // Reset the text file to go back to the start
         TextFileInput inputFile = new TextFileInput(args[0]);
 
-        // create a 2d array using the words in the textfile
+        // create a 2d array using the words in the textfile 
         String[] myArray = fillArray(inputFile, count);
         // System.out.println(Arrays.toString(myArray));
         while (true) {
